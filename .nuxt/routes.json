@@ -1,0 +1,23 @@
+[
+  {
+    "name": "else",
+    "path": "/else",
+    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/else.vue",
+    "chunkName": "pages/else",
+    "_name": "_5fe84664"
+  },
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/inspire.vue",
+    "chunkName": "pages/inspire",
+    "_name": "_708a79d5"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_3cb8708d"
+  }
+]
