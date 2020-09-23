@@ -21,6 +21,13 @@
     "_name": "_6eb99655"
   },
   {
+    "name": "illustration",
+    "path": "/illustration",
+    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/illustration.vue",
+    "chunkName": "pages/illustration",
+    "_name": "_38180465"
+  },
+  {
     "name": "location",
     "path": "/location",
     "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/location.vue",

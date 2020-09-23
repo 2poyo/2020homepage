@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _15534d1e = () => interopDefault(import('../pages/booth.vue' /* webpackChunkName: "pages/booth" */))
 const _5fe84664 = () => interopDefault(import('../pages/else.vue' /* webpackChunkName: "pages/else" */))
 const _6eb99655 = () => interopDefault(import('../pages/event.vue' /* webpackChunkName: "pages/event" */))
+const _38180465 = () => interopDefault(import('../pages/illustration.vue' /* webpackChunkName: "pages/illustration" */))
 const _072f4aca = () => interopDefault(import('../pages/location.vue' /* webpackChunkName: "pages/location" */))
 const _3cb8708d = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -37,6 +38,10 @@ export const routerOptions = {
     path: "/event",
     component: _6eb99655,
     name: "event"
+  }, {
+    path: "/illustration",
+    component: _38180465,
+    name: "illustration"
   }, {
     path: "/location",
     component: _072f4aca,

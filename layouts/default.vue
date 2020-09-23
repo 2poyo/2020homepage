@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="green lighten-1" dense dark app>
+    <v-app-bar color="green lighten-1" dark app>
       <v-toolbar-title @click="$router.push('/')">くぬぎだ祭{{ new Date().getFullYear() }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -22,7 +22,7 @@
     >
 
       <v-btn @click="$router.push('/booth')">
-        <span>模擬店一覧</span>
+        <span>模擬店/研究室</span>
         <v-icon>mdi-store</v-icon>
       </v-btn>
 

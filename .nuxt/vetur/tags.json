@@ -10,5 +10,11 @@
   },
   "LazyVuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
+  },
+  "BackBtn": {
+    "description": "Auto imported from components/backBtn.vue"
+  },
+  "LazyBackBtn": {
+    "description": "Auto imported from components/backBtn.vue"
   }
 }
