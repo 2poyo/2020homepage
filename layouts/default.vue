@@ -1,42 +1,42 @@
 <template>
-  <div>
-    <v-app-bar color="deep-purple accent-4" dense>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>Page title</v-toolbar-title>
+  <v-app>
+    <v-app-bar color="green lighten-1" dense dark app>
+      <v-toolbar-title @click="$router.push('/')">くぬぎだ祭{{ new Date().getFullYear() }}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>mdi-heart</v-icon>
       </v-btn>
     </v-app-bar>
 
-    <v-content>
+    <v-content class="pb-10">
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
 
     <v-bottom-navigation
-      hide-on-scroll
       grow
+      fixed
+      light
       color="green lighten-1"
     >
 
-      <v-btn>
+      <v-btn @click="$router.push('/booth')">
         <span>模擬店一覧</span>
         <v-icon>mdi-store</v-icon>
       </v-btn>
 
-      <v-btn>
+      <v-btn @click="$router.push('/event')">
         <span>イベント情報</span>
         <v-icon>mdi-calendar-clock</v-icon>
       </v-btn>
 
-      <v-btn>
+      <v-btn @click="$router.push('/location')">
         <span>マップ</span>
         <v-icon>mdi-map-marker</v-icon>
       </v-btn>
     </v-bottom-navigation>
-  </div>
+  </v-app>
 </template>
 
 <script>

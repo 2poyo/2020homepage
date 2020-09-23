@@ -1,5 +1,12 @@
 [
   {
+    "name": "booth",
+    "path": "/booth",
+    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/booth.vue",
+    "chunkName": "pages/booth",
+    "_name": "_15534d1e"
+  },
+  {
     "name": "else",
     "path": "/else",
     "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/else.vue",
@@ -7,11 +14,18 @@
     "_name": "_5fe84664"
   },
   {
-    "name": "inspire",
-    "path": "/inspire",
-    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_708a79d5"
+    "name": "event",
+    "path": "/event",
+    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/event.vue",
+    "chunkName": "pages/event",
+    "_name": "_6eb99655"
+  },
+  {
+    "name": "location",
+    "path": "/location",
+    "component": "/home/poyo/Development/kunugida_fes/2020homepage/pages/location.vue",
+    "chunkName": "pages/location",
+    "_name": "_072f4aca"
   },
   {
     "name": "index",

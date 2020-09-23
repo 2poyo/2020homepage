@@ -5,6 +5,8 @@ import NuxtError from '../layouts/error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
+import '../assets/style.css'
+
 import '../node_modules/vuetify/dist/vuetify.css'
 
 import _6f6c098b from '../layouts/default.vue'
@@ -157,24 +159,15 @@ export default {
       }
       this.$loading.finish()
     },
+
     errorChanged () {
-      if (this.nuxt.err) {
-        if (this.$loading) {
-          if (this.$loading.fail) {
-            this.$loading.fail(this.nuxt.err)
-          }
-          if (this.$loading.finish) {
-            this.$loading.finish()
-          }
+      if (this.nuxt.err && this.$loading) {
+        if (this.$loading.fail) {
+          this.$loading.fail(this.nuxt.err)
         }
-
-        let errorLayout = (NuxtError.options || NuxtError).layout;
-
-        if (typeof errorLayout === 'function') {
-          errorLayout = errorLayout(this.context)
+        if (this.$loading.finish) {
+          this.$loading.finish()
         }
-
-        this.setLayout(errorLayout)
       }
     },
 
