@@ -3,7 +3,7 @@
         <v-row>
             <v-col
               v-for="card in cards"
-
+              :key="card.id"
               :md="4"
             >
               <v-card>
@@ -76,5 +76,4 @@
 </script>
 
 <style scoped>
-
 </style>
