@@ -16,18 +16,22 @@
       <v-expand-transition>
         <v-card v-show="shopWindow">
           <v-divider></v-divider>
-          <v-col v-for="shop in shopList" :cols="12">
+          <v-col v-for="shop in shopList" :key="shop.id" :cols="12">
             <v-card>
               <v-img
                 :src="shop.src"
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="200px"
+                @click.stop="onClickImg(shop.src)"
               >
+                <v-btn small right>場所</v-btn>
                 <v-card-title v-text="shop.title"></v-card-title>
+
+
               </v-img>
 
-              <v-flex>
+              <v-flex v-if="shop.list">
                 <v-simple-table
                   class="text-center"
                   dense
@@ -41,7 +45,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="item in shop.list">
+                      <tr v-for="item in shop.list" :key="item.id">
                         <td>{{ item.name }}</td>
                         <td>{{ item.price }}円</td>
                       </tr>
@@ -71,39 +75,21 @@
       <v-expand-transition>
         <v-card v-show="attractionWindow">
           <v-divider></v-divider>
-          <v-col v-for="shop in shopList" :cols="12">
+          <v-col v-for="attraction in attractionList" :key="attraction.id" :cols="12">
             <v-card>
               <v-img
-                :src="shop.src"
+                :src="attraction.src"
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="200px"
+                @click.stop="onClickImg(attraction.src)"
               >
-                <v-card-title v-text="shop.title"></v-card-title>
+                <v-card-title v-text="attraction.title"></v-card-title>
               </v-img>
 
-              <v-flex>
-                <v-simple-table
-                  class="text-center"
-                  dense
-                  fixed-header
-                >
-                  <template v-slot:default>
-                    <thead>
-                      <tr>
-                        <th class="text-center">品名</th>
-                        <th class="text-center">値段</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-for="item in shop.list">
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.price }}円</td>
-                      </tr>
-                    </tbody>
-                  </template>
-                </v-simple-table>
-              </v-flex>
+              <div v-if="attraction.content">
+                <v-card-text>{{attraction.content}}</v-card-text>
+              </div>
             </v-card>
           </v-col>
         </v-card>
@@ -126,7 +112,7 @@
       <v-expand-transition>
         <v-card v-show="labWindow">
           <v-divider></v-divider>
-          <v-col v-for="shop in shopList" :cols="12">
+          <v-col v-for="shop in shopList" :key="shop.id" :cols="12">
             <v-card>
               <v-img
                 :src="shop.src"
@@ -151,7 +137,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="item in shop.list">
+                      <tr v-for="item in shop.list" :key="item.id">
                         <td>{{ item.name }}</td>
                         <td>{{ item.price }}円</td>
                       </tr>
@@ -165,6 +151,22 @@
       </v-expand-transition>
     </v-card>
 
+    <v-dialog
+      v-model="dialog"
+      max-width="500"
+    >
+
+      <v-card class="pa-2" color="white">
+        <v-img
+          :src="currentSrc"
+          class="white--text align-end"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+        >
+        </v-img>
+      </v-card>
+
+    </v-dialog>
+
   </div>
 </template>
 
@@ -175,7 +177,9 @@ export default {
     return {
       shopWindow: false,
       attractionWindow: false,
-      labWindow: false
+      labWindow: false,
+      dialog: false,
+      currentSrc: '',
     }
   },
   computed: {
@@ -187,6 +191,12 @@ export default {
     },
     labList() {
       return this.$store.state.booth.lab
+    }
+  },
+  methods: {
+    onClickImg(img){
+      this.currentSrc = img;
+      this.dialog = true;
     }
   }
 }
